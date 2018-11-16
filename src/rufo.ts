@@ -24,7 +24,7 @@ function runRufo(document: TextDocument) {
       const cwd = workspace.rootPath;
       const options: ExecOptions = { timeout: 3000 };
       if (cwd) options.cwd = cwd;
-      const child = exec("rufo", options, (error, stdout, stderr) => {
+      const child = exec("standard", options, (error, stdout, stderr) => {
         if (!stderr && stdout && stdout.length > 0) {
           const lastLine = document.lineCount - 1;
           const endOfLastLine = document.lineAt(lastLine).range.end;
